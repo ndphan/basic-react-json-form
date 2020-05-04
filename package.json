@@ -1,0 +1,64 @@
+{
+  "name": "basic-react-json-form",
+  "version": "1.0.0",
+  "description": "A basic json form builder for React that will build the form structure based on the json object",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ndphan/basic-react-json-form.git"
+  },
+  "scripts": {
+    "build": "mkdirp dist && babel index.js --out-file dist/index.js",
+    "test": "nyc mocha --require @babel/register",
+    "live-test": "watch 'npm run test' './test/'"
+  },
+  "keywords": [
+    "react",
+    "reactjs",
+    "form",
+    "json",
+    "builder",
+    "customise",
+    "basic"
+  ],
+  "author": "ndphan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ndphan/basic-react-json-form/issues"
+  },
+  "dependencies": {
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.6",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-react": "^7.9.4",
+    "@babel/register": "^7.9.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "expect": "^25.5.0",
+    "jsdom": "16.2.2",
+    "jsdom-global": "3.0.2",
+    "mkdirp": "^1.0.4",
+    "mocha": "^7.1.2",
+    "nyc": "^15.0.1",
+    "react-dom": "^16.13.1",
+    "watch": "^1.0.2"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties"
+    ]
+  },
+  "browserslist": [
+    "> 0.25%",
+    "not dead"
+  ]
+}
