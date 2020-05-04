@@ -1,6 +1,6 @@
 {
   "name": "basic-react-json-form",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A basic json form builder for React that will build the form structure based on the json object",
   "main": "dist/index.js",
   "repository": {
