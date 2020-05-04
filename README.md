@@ -12,20 +12,20 @@ npm i basic-react-json-form
 
 ```javascript
 import React from "react";
-import JSONForm from "basic-react-json-form";
+import BasicReactJsonForm from "basic-react-json-form";
 
 function example({ json }) {
   return (
-      <JSONForm
+      <BasicReactJsonForm
         className="json-form"
         object={json}
-        ContainerComponent={ContainerRenderer}
-        FormFieldComponent={FormFieldRenderer}
+        ContainerComponent={ContainerComponent}
+        FormFieldComponent={FormFieldComponent}
       />
   );
 }
 
-function FormFieldRenderer({ field, owner, onChange, value }) {
+function FormFieldComponent({ field, owner, onChange, value }) {
   return (
     <div className="json-form-child">
       <label name={field}>{field}</label>
@@ -39,7 +39,38 @@ function FormFieldRenderer({ field, owner, onChange, value }) {
   );
 }
 
-function ContainerRenderer({ children, field, owner, ...others }) {
+function ContainerComponent({ children, field, owner, ...others }) {
   return <div className="json-form-parent" {...others}>{children}</div>;
 }
 ```
+
+## Api
+BasicReactJsonForm
+
+The component which renders the JSON object form structure
+
+props
+- object: the json object (note: only strings are supported)
+- ContainerComponent: component to render the container
+- FormFieldComponent: component to render the input field
+- other props are passed to the form element
+
+ContainerComponent
+
+The container of any nested object properties e.g. { a: { b: '2' } } where a will contain a parent
+
+props
+- field: the key of the container for the property in the parent e.g. { a: { b: { d: 2 } } } where b is the key
+- owner: the parent object for this level e.g. { a: { b: { d: 2 } } } where { b: { d: 2 } } is the owner
+- childern: the child input / parent fields (this must be placed inside the rendered html)
+
+FormFieldComponent
+
+The input field component for the string property e.g. { a: { b: '2' } } where b is a input field
+
+props
+- field: the key of the field for the property in the parent e.g. { a: { b: { d: 2 } } } where d is the key
+- owner: the parent object for this level e.g. { a: { b: { d: 2 } } } where { d: 2 } is the owner
+- onChange: onChange that must be bound to an input field
+- value: value that must be bound to an input field
+
