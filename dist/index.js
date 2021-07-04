@@ -153,12 +153,12 @@ function BasicReactJsonForm(_ref3) {
   }));
 }
 
-BasicReactJsonForm.propTypes = {
+BasicReactJsonForm.propTypes = Object.assign({}, _react.default.Component.defaultProps, {
   object: _propTypes.default.object,
   ContainerComponent: _propTypes.default.oneOfType([_propTypes.default.node, _propTypes.default.func]),
   FormFieldComponent: _propTypes.default.oneOfType([_propTypes.default.node, _propTypes.default.func]),
   onChange: _propTypes.default.func
-};
+});
 BasicReactJsonForm.defaultProps = {
   onChange: function onChange() {}
 };
