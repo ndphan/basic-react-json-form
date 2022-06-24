@@ -40,7 +40,7 @@
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",
     "expect": "^25.5.0",
-    "jsdom": "16.2.2",
+    "jsdom": "16.5.0",
     "jsdom-global": "3.0.2",
     "mkdirp": "^1.0.4",
     "mocha": "^7.2.0",
